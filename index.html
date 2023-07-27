@@ -13,7 +13,9 @@
         <h1 class="text-center bg-danger">CRUD Managment System</h1>
         <div class="form-gruop my-5">
             <label for="productName" class="mb-4">productName</label>
-            <input type="text" name="" id="productName" class="form-control">
+            <input oninput="(validProductName())" type="text" name="" id="productName" class="form-control">
+            <p class="text-danger d-none" id="wonrgName">Worng Name</p>
+
         </div>
         <div class="form-gruop my-5">
             <label for="productPrice" class="mb-4">productPrice</label>

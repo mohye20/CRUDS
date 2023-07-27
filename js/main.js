@@ -21,17 +21,26 @@ else {
 
 
 function addProduct() {
-    var product = {
-        name: productName.value,
-        price: productPrice.value,
-        cat: productCat.value,
-        desc: productDesc.value,
+
+    if (validProductName() == true) {
+
+        var product = {
+            name: productName.value,
+            price: productPrice.value,
+            cat: productCat.value,
+            desc: productDesc.value,
+        }
+
+        productList.push(product);
+        display(productList);
+        clearFrom();
+        localStorage.setItem("ProductList", JSON.stringify(productList))
     }
 
-    productList.push(product);
-    display(productList);
-    clearFrom();
-    localStorage.setItem("ProductList", JSON.stringify(productList))
+    else {
+
+    }
+
 }
 
 function display(display) {
@@ -41,7 +50,7 @@ function display(display) {
     for (var i = 0; i < display.length; i++) {
         box += `    <tr>
         <td>${i + 1}</td>
-        <td>${display[i].newName?display[i].newName:display[i].name}</td>
+        <td>${display[i].newName ? display[i].newName : display[i].name}</td>
         <td>${display[i].price}</td>
         <td>${display[i].cat}</td>
         <td>${display[i].desc}</td>
@@ -71,15 +80,12 @@ function updaetElement(number) {
     changeButton(number);
 }
 
-// function takeIndex(number) {
-//     return number
-// }
 
 function changeValue(number) {
-   productList[number].name =productName.value;
-   productList[number].price =productPrice.value;
-   productList[number].cat =productCat.value;
-   productList[number].desc =productDesc.value;
+    productList[number].name = productName.value;
+    productList[number].price = productPrice.value;
+    productList[number].cat = productCat.value;
+    productList[number].desc = productDesc.value;
 
     display(productList)
     clearFrom()
@@ -127,7 +133,7 @@ function search(text) {
     var foundedItems = []
     for (var i = 0; i < productList.length; i++) {
         if (productList[i].name.toLowerCase().includes(text.toLowerCase()) == true) {
-            productList[i].newName = productList[i].name.toLowerCase().replace(text.toLowerCase(),`<span class="text-danger">${text}</span>`)
+            productList[i].newName = productList[i].name.toLowerCase().replace(text.toLowerCase(), `<span class="text-danger">${text}</span>`)
             console.log("Founded", i)
             foundedItems.push(productList[i])
         };
@@ -141,3 +147,22 @@ function search(text) {
 
 
 
+
+function validProductName() {
+    var regex = /^[A-Z][a-z]{3,8}$/;
+
+    if(regex.test(productName.value ) == true) {
+        productName.style.border ="none";
+        document.getElementById("wonrgName").classList.add("d-none");
+
+
+        return true;
+    }
+
+    else{
+        productName.style.border ="solid red 5px";
+        document.getElementById("wonrgName").classList.remove("d-none");
+        return false
+    }
+    // return regex.test(productName.value);
+}
