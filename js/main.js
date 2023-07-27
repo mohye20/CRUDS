@@ -22,7 +22,7 @@ else {
 
 function addProduct() {
 
-    if (validProductName() == true) {
+    if (validProductName() == true && validProductPrice() == true && validProductDesc() == true && validProductCat() == true) {
 
         var product = {
             name: productName.value,
@@ -151,18 +151,69 @@ function search(text) {
 function validProductName() {
     var regex = /^[A-Z][a-z]{3,8}$/;
 
-    if(regex.test(productName.value ) == true) {
-        productName.style.border ="none";
+    if (regex.test(productName.value) == true) {
+        productName.style.border = "none";
         document.getElementById("wonrgName").classList.add("d-none");
-
-
         return true;
     }
 
-    else{
-        productName.style.border ="solid red 5px";
+    else {
+        productName.style.border = "solid red 5px";
         document.getElementById("wonrgName").classList.remove("d-none");
         return false
     }
-    // return regex.test(productName.value);
 }
+
+
+function validProductPrice() {
+    var regex = /^(?!0\d{3})[1-9]\d{3}$|10000$/;
+
+    if (regex.test(productPrice.value) == true) {
+        productPrice.style.border = "none";
+        document.getElementById("wonrgPrice").classList.add("d-none");
+        return true;
+    }
+
+    else {
+        productPrice.style.border = "solid red 5px";
+        document.getElementById("wonrgPrice").classList.remove("d-none");
+        return false
+    }
+}
+
+
+
+function validProductCat() {
+    var regex = /^(tv|mobile|laptop|bestinstructor)$/i;
+
+    if (regex.test(productCat.value) == true) {
+        productCat.style.border = "none";
+        document.getElementById("wonrgCat").classList.add("d-none");
+        return true;
+    }
+
+    else {
+        productCat.style.border = "solid red 5px";
+        document.getElementById("wonrgCat").classList.remove("d-none");
+        return false
+    }
+}
+
+
+function validProductDesc() {
+    var regex = /^(?=.{250,}).*$/s;
+
+    if (regex.test(productDesc.value) == true) {
+        productDesc.style.border = "none";
+        document.getElementById("wonrgDesc").classList.add("d-none");
+        return true;
+    }
+
+    else {
+        productDesc.style.border = "solid red 5px";
+        document.getElementById("wonrgDesc").classList.remove("d-none");
+        return false
+    }
+}
+
+

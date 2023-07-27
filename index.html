@@ -13,21 +13,27 @@
         <h1 class="text-center bg-danger">CRUD Managment System</h1>
         <div class="form-gruop my-5">
             <label for="productName" class="mb-4">productName</label>
-            <input oninput="(validProductName())" type="text" name="" id="productName" class="form-control">
+            <input  placeholder="Capitalize" oninput="(validProductName())" type="text" name="" id="productName" class="form-control">
             <p class="text-danger d-none" id="wonrgName">Worng Name</p>
 
         </div>
         <div class="form-gruop my-5">
             <label for="productPrice" class="mb-4">productPrice</label>
-            <input type="number" name="" id="productPrice" class="form-control">
+            <input type="name" placeholder="From 1000 ~ 10000" oninput="(validProductPrice())" name="" id="productPrice" class="form-control">
+            <p class="text-danger d-none" id="wonrgPrice">Worng Price</p>
+
         </div>
         <div class="form-gruop my-5">
             <label for="productCat" class="mb-4">productCat</label>
-            <input type="text" name="" id="productCat" class="form-control">
+            <input type="text" placeholder=" tv|mobile|laptop|bestinstructor " name="" oninput="validProductCat()" id="productCat" class="form-control">
+            <p class="text-danger d-none" id="wonrgCat">Worng Category</p>
+
         </div>
         <div class="form-gruop my-5">
             <label for="productDesc" class="mb-4">productDesc</label>
-            <input type="text" name="" id="productDesc" class="form-control">
+            <textarea name="" placeholder="Minimum 250 Char" id="productDesc" class="form-control"  oninput="validProductDesc()"></textarea>
+            <p class="text-danger d-none" id="wonrgDesc">Worng Description</p>
+
         </div>
 
         <button id="button" onclick="addProduct()" class="btn btn-warning btn-lg mb-5">Add Product</button>
