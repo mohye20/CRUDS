@@ -184,7 +184,7 @@ function validProductPrice() {
 
 
 function validProductCat() {
-    var regex = /^(tv|mobile|laptop|bestinstructor)$/i;
+    var regex = /^(tv|mobile|laptop)$/i;
 
     if (regex.test(productCat.value) == true) {
         productCat.style.border = "none";
