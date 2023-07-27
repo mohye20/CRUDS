@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stye.css">
+</head>
+<body>
+
+    <div class="container my-5">
+        <h1 class="text-center bg-danger">CRUD Managment System</h1>
+        <div class="form-gruop my-5">
+            <label for="productName" class="mb-4">productName</label>
+            <input type="text" name="" id="productName" class="form-control">
+        </div>
+        <div class="form-gruop my-5">
+            <label for="productPrice" class="mb-4">productPrice</label>
+            <input type="number" name="" id="productPrice" class="form-control">
+        </div>
+        <div class="form-gruop my-5">
+            <label for="productCat" class="mb-4">productCat</label>
+            <input type="text" name="" id="productCat" class="form-control">
+        </div>
+        <div class="form-gruop my-5">
+            <label for="productDesc" class="mb-4">productDesc</label>
+            <input type="text" name="" id="productDesc" class="form-control">
+        </div>
+
+        <button id="button" onclick="addProduct()" class="btn btn-warning btn-lg mb-5">Add Product</button>
+        <div id="button2" "></div>
+       <div class=" my-4 mx-auto">
+        <h4>Search...</h4>
+        <input oninput="search(this.value)" type="text" name="" id="" class="form-control">
+
+       </div>
+        <table class="table text-center">
+            <thead>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Cat</th>
+                <th>Desc</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </thead>
+            <tbody id="tBody">
+            
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
