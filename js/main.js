@@ -130,7 +130,7 @@ function show(number) {
 
 function search(text) {
 
-    if()
+  
     var foundedItems = []
     for (var i = 0; i < productList.length; i++) {
         if (productList[i].name.toLowerCase().includes(text.toLowerCase()) == true) {
