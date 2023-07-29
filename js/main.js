@@ -33,7 +33,7 @@ function addProduct() {
 
         productList.push(product);
         display(productList);
-        clearFrom();
+        // clearFrom();
         localStorage.setItem("ProductList", JSON.stringify(productList))
     }
 
@@ -54,8 +54,8 @@ function display(display) {
         <td>${display[i].price}</td>
         <td>${display[i].cat}</td>
         <td>${display[i].desc}</td>
-        <td><button onclick="removeElement(${i})" class="btn deleteBtn btn-danger btn-sm">Delete</button></td>
-        <td><button onclick = "updaetElement(${i}) " class="btn btn-warning btn-sm">Update</button></td>
+        <td><i class="fa-regular fa-trash-can text-danger fw-bolder fs-1 btn-sm btn  "onclick="removeElement(${i})"></i></td>
+        <td><i class="fa-regular btn btn-warning btn-lg fa-pen-to-square" onclick = "updaetElement(${i}) "></i></td>
     </tr>`;
     }
 
@@ -201,7 +201,7 @@ function validProductCat() {
 
 
 function validProductDesc() {
-    var regex = /^(?=.{250,}).*$/s;
+    var regex = /^(?=.{25,}).*$/s;
 
     if (regex.test(productDesc.value) == true) {
         productDesc.style.border = "none";

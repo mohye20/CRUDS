@@ -1,5 +1,10 @@
+:root{
+    --maon-color:linear-gradient(yellow, green);;
+}
+
 body{
-    background-color: black;
+    background-image: var(--maon-color);
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+
